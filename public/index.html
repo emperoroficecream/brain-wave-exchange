@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CURRENCY EXCHANGE</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+      header {
+        margin-left: auto;
+        margin-right: auto;
+        width: 65%;
+      }
+      body {
+        background: #191919;
+      }
+      h1, label {
+        font-family: 'Press Start 2P', cursive;
+        text-shadow: 3px 3px 0px #2038ec;
+        color:#fff;
+        font-weight:400;
+      }
+      h1 {
+        font-size: 5em;
+      }
+      label {
+        font-size: 1.5em;
+      }
+      .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 65%;
+      }
+      #submitButton {
+        position: relative;
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        border: 0;
+        margin: 1em;
+        outline: none;
+        background-color: hsla(10, 90%, 40%, 1);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: box-shadow 200ms;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function onSubmission() {
+        console.log('submitted');
+      }
+    </script>
+    <section class="section">
+      <div class="container">
+          <header>
+              <h1 class="title">Currency Exchange</h1>
+            </header>
+            <form action='upload' method='post' encType="multipart/form-data">
+              <p>
+                <label>1. Choose your brain wave data file.</label>
+                <input id="uploadBrainWaveData" type="file" name="brainWaveData">
+              </p>
+              <p>
+                <label>2. Submit it!</label>
+                <input id="submitButton" class="push--flat" type="submit" value="">
+              </p>
+            </form>
+      </div>
+    </section>
+  </body>
+</html>
