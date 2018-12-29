@@ -93,6 +93,13 @@ function parseFromCSVToEpisodicSpecs() {
       level.value = Math.trunc(level.value/10); // level values range from 0 to 9
       return level;
     })
+    // only every 3 levels
+    .reduce((accumulator, level, i, levels) => {
+      if (i == 0 || i % 3 === 0) {
+        accumulator.push(level);
+      }
+      return accumulator;
+    }, [])
     .reduce((accumulator, level, i, levels) => {
       if (i == 0 || i == levels.length - 1 || (levels[i - 1].value != level.value)) {
         accumulator.push(level);
@@ -165,7 +172,7 @@ function trimAndConcatenate(episodes) {
             rej(err);
           })
           .mergeToFile(`${__dirname}/public/${Date.now()}.mp4`);
-      }, 15000); // timeout is necessary for ffmpeg not to throw invalid input errors
+      }, 20000); // timeout is necessary for ffmpeg not to throw invalid input errors
     });
   });
   return resultPromise;

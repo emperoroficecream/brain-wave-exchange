@@ -20,7 +20,7 @@
       body {
         background: #191919;
       }
-      h1, label {
+      h1, label, input, a {
         font-family: 'Press Start 2P', cursive;
         text-shadow: 3px 3px 0px #2038ec;
         color:#fff;
@@ -29,9 +29,11 @@
       h1 {
         font-size: 5em;
       }
-      label {
+      label, a {
         font-size: 1.5em;
+        text-decoration: none;
       }
+
       .container {
         margin-left: auto;
         margin-right: auto;
@@ -40,15 +42,35 @@
       #submitButton {
         position: relative;
         display: inline-block;
-        width: 70px;
-        height: 70px;
-        border: 0;
-        margin: 1em;
-        outline: none;
-        background-color: hsla(10, 90%, 40%, 1);
-        border-radius: 50%;
         cursor: pointer;
         transition: box-shadow 200ms;
+        border: none;
+        background: none;
+        font-size: 1.5em;
+      }
+      #backgroundVideo {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+    }
+      .backgroundOverlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -90;
+        opacity: 0.5;
+        filter: blur(10px);
       }
     </style>
   </head>
@@ -65,14 +87,23 @@
             </header>
             <form action='upload' method='post' encType="multipart/form-data">
               <p>
-                <label>1. Choose your brain wave data file.</label>
-                <input id="uploadBrainWaveData" type="file" name="brainWaveData">
+                <label for="uploadBrainWaveData"><span class="arcade-buttons red"></span>Brain wave data file.
+                  <input id="uploadBrainWaveData" type="file" name="brainWaveData">
+                </label>
               </p>
               <p>
-                <label>2. Submit it!</label>
-                <input id="submitButton" class="push--flat" type="submit" value="">
+                  <span class="arcade-buttons yellow"></span><input id="submitButton" type="submit" value="Withdraw">
+              </p>
+              <p>
+                  <span class="arcade-buttons green"></span>
+                  <a href="/graph-video" id="graph-link">Brain waves</a>
               </p>
             </form>
+            <div class="backgroundOverlay">
+                <video autoplay muted loop id="backgroundVideo">
+                    <source src="background/sample_wave.mp4" type="video/mp4"></source>
+                  </video>
+            </div>
       </div>
     </section>
   </body>

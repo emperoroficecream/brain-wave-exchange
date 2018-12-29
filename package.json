@@ -14,7 +14,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node app.js",
-    "sass:compile": "node-sass --include-path sass style.scss ./public/style.css"
+    "build": "node-sass --include-path sass style.scss ./public/style.css"
   },
   "engines": {
     "node": "11.x"

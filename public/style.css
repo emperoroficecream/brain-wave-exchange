@@ -9,56 +9,85 @@ body {
 h1 {
   font-size: 5vw; }
 
-[class*="push"] {
+.arcade-buttons {
   position: relative;
   display: inline-block;
-  width: 120px;
-  height: 120px;
+  width: 50px;
+  height: 50px;
   border: 0;
   margin: 1em;
   outline: none;
   background-color: #c2290a;
   border-radius: 50%;
   cursor: pointer;
-  transition: box-shadow 200ms; }
+  transition: box-shadow 200ms;
+  top: 30px; }
 
-.push--flat {
-  box-shadow: inset 0 3.75px 0 #da2e0b, inset 0 -3.75px 0 #aa2409, inset 0 0 0 3.75px #b32609, inset 0 0 0 10px #c2290a, inset 0 0 0 12px #611405, inset 0 0 0 13.04348px black, inset 0 0 0 16px rgba(247, 133, 110, 0.7), inset 0 0 0 21.81818px #c2290a, inset 0 48px 16px #aa2409, inset 0 0 12px 20px #911f08, 0 6px 0 rgba(0, 0, 0, 0.3); }
-  .push--flat:after {
+.arcade-buttons.yellow {
+  background-color: yellow; }
+
+.arcade-buttons.green {
+  background-color: green; }
+
+.arcade-buttons {
+  box-shadow: inset 0 1.5625px 0 #da2e0b, inset 0 -1.5625px 0 #aa2409, inset 0 0 0 1.5625px #b32609, inset 0 0 0 4.16667px #c2290a, inset 0 0 0 5px #611405, inset 0 0 0 5.43478px black, inset 0 0 0 6.66667px rgba(247, 133, 110, 0.7), inset 0 0 0 9.09091px #c2290a, inset 0 20px 6.66667px #aa2409, inset 0 0 5px 8.33333px #911f08, 0 2.5px 0 rgba(0, 0, 0, 0.3); }
+  .arcade-buttons:after {
     content: '';
     position: absolute;
-    bottom: 6px;
-    left: 12px;
+    bottom: 2.5px;
+    left: 5px;
     display: block;
-    width: 96px;
-    height: 96px;
-    border: 8px solid rgba(0, 0, 0, 0.3);
-    border-width: 0 0 8px;
+    width: 40px;
+    height: 40px;
+    border: 3.33333px solid rgba(0, 0, 0, 0.3);
+    border-width: 0 0 3.33333px;
     border-radius: 50%;
     transition-duration: 200ms; }
-  .push--flat:active, .push--flat.is-pushed {
-    box-shadow: inset 0 3.75px 0 #da2e0b, inset 0 -3.75px 0 #aa2409, inset 0 0 0 3.75px #b32609, inset 0 0 0 10px #c2290a, inset 0 0 0 12px #611405, inset 0 0 0 14.11765px black, inset 0 0 0 16px rgba(247, 133, 110, 0.2), inset 0 0 0 21.81818px #b32609, inset 0 48px 16px #9b2108, inset 0 0 12px 20px #791a06, 0 6px 0 rgba(0, 0, 0, 0.3);
+  .arcade-buttons:active, .arcade-buttons.is-pushed {
+    box-shadow: inset 0 1.5625px 0 #da2e0b, inset 0 -1.5625px 0 #aa2409, inset 0 0 0 1.5625px #b32609, inset 0 0 0 4.16667px #c2290a, inset 0 0 0 5px #611405, inset 0 0 0 5.88235px black, inset 0 0 0 6.66667px rgba(247, 133, 110, 0.2), inset 0 0 0 9.09091px #b32609, inset 0 20px 6.66667px #9b2108, inset 0 0 5px 8.33333px #791a06, 0 2.5px 0 rgba(0, 0, 0, 0.3);
     background-color: #b8270a; }
-    .push--flat:active:after, .push--flat.is-pushed:after {
-      bottom: 14px;
+    .arcade-buttons:active:after, .arcade-buttons.is-pushed:after {
+      bottom: 5.83333px;
       border-width: 0; }
 
-.push--skeuo {
-  box-shadow: inset 0 5px 0 #da2e0b, inset 0 -5px 2px #aa2409, 0 0 2px #c2290a, inset 0 0 4px #791a06, inset 0 0 4px rgba(51, 51, 51, 0.5), inset 0 0 2px 10px #c2290a, inset 0 -4px 3px 12px rgba(51, 51, 51, 0.7), inset 0 0 2px 12px #611405, inset 0 0 2px 12px rgba(51, 51, 51, 0.7), inset 0 0 1px 13.04348px black, inset 0 0 1px 15px rgba(247, 133, 110, 0.7), inset 0 6px 0 14.11765px rgba(244, 71, 37, 0.7), inset 0 -6px 2px 14.11765px rgba(145, 31, 8, 0.2), inset 0 0 0 21.81818px #c2290a, inset 0 48px 16px #aa2409, inset 0 0 12px 20px #911f08, 0 3px 6px rgba(0, 0, 0, 0.5); }
-  .push--skeuo:active, .push--skeuo.is-pushed {
-    box-shadow: inset 0 5px 0 #da2e0b, inset 0 -5px 2px #aa2409, 0 0 2px #c2290a, inset 0 0 4px #791a06, inset 0 0 4px rgba(51, 51, 51, 0.5), inset 0 0 2px 10px #c2290a, inset 0 -4px 3px 12px rgba(51, 51, 51, 0.7), inset 0 0 2px 12px #611405, inset 0 0 2px 12px rgba(51, 51, 51, 0.7), inset 0 0 3px 14.11765px black, inset 0 0 1px 16px rgba(247, 133, 110, 0.2), inset 0 6px 0 28px rgba(244, 71, 37, 0.5), inset 0 -6px 2px 28px rgba(97, 20, 5, 0.2), inset 0 0 0 21.81818px #b32609, inset 0 48px 16px #9b2108, inset 0 0 12px 20px #791a06, 0 3px 6px rgba(0, 0, 0, 0.5);
-    background-color: #b8270a; }
-    .push--skeuo:active:before, .push--skeuo.is-pushed:before {
-      opacity: .5; }
-  .push--skeuo:before {
+.arcade-buttons.yellow {
+  box-shadow: inset 0 1.5625px 0 #ffff1a, inset 0 -1.5625px 0 #e6e600, inset 0 0 0 1.5625px #f0f000, inset 0 0 0 4.16667px yellow, inset 0 0 0 5px #999900, inset 0 0 0 5.43478px black, inset 0 0 0 6.66667px rgba(255, 255, 153, 0.7), inset 0 0 0 9.09091px yellow, inset 0 20px 6.66667px #e6e600, inset 0 0 5px 8.33333px #cccc00, 0 2.5px 0 rgba(0, 0, 0, 0.3); }
+  .arcade-buttons.yellow:after {
     content: '';
     position: absolute;
-    bottom: 26.66667px;
-    left: 33.33333px;
+    bottom: 2.5px;
+    left: 5px;
     display: block;
-    width: 54.54545px;
-    height: 36.36364px;
-    background: rgba(247, 133, 110, 0.2);
-    background: linear-gradient(to top, rgba(250, 173, 158, 0.3) 0%, rgba(194, 41, 10, 0.1) 100%);
-    border-radius: 40% 40% 60% 60%;
-    transition: opacity 200ms; }
+    width: 40px;
+    height: 40px;
+    border: 3.33333px solid rgba(0, 0, 0, 0.3);
+    border-width: 0 0 3.33333px;
+    border-radius: 50%;
+    transition-duration: 200ms; }
+  .arcade-buttons.yellow:active, .arcade-buttons.yellow.is-pushed {
+    box-shadow: inset 0 1.5625px 0 #ffff1a, inset 0 -1.5625px 0 #e6e600, inset 0 0 0 1.5625px #f0f000, inset 0 0 0 4.16667px yellow, inset 0 0 0 5px #999900, inset 0 0 0 5.88235px #333300, inset 0 0 0 6.66667px rgba(255, 255, 153, 0.2), inset 0 0 0 9.09091px #f0f000, inset 0 20px 6.66667px #d6d600, inset 0 0 5px 8.33333px #b3b300, 0 2.5px 0 rgba(0, 0, 0, 0.3);
+    background-color: #f5f500; }
+    .arcade-buttons.yellow:active:after, .arcade-buttons.yellow.is-pushed:after {
+      bottom: 5.83333px;
+      border-width: 0; }
+
+.arcade-buttons.green {
+  box-shadow: inset 0 1.5625px 0 #009a00, inset 0 -1.5625px 0 #006700, inset 0 0 0 1.5625px #007100, inset 0 0 0 4.16667px green, inset 0 0 0 5px #001a00, inset 0 0 0 5.43478px black, inset 0 0 0 6.66667px rgba(26, 255, 26, 0.7), inset 0 0 0 9.09091px green, inset 0 20px 6.66667px #006700, inset 0 0 5px 8.33333px #004d00, 0 2.5px 0 rgba(0, 0, 0, 0.3); }
+  .arcade-buttons.green:after {
+    content: '';
+    position: absolute;
+    bottom: 2.5px;
+    left: 5px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 3.33333px solid rgba(0, 0, 0, 0.3);
+    border-width: 0 0 3.33333px;
+    border-radius: 50%;
+    transition-duration: 200ms; }
+  .arcade-buttons.green:active, .arcade-buttons.green.is-pushed {
+    box-shadow: inset 0 1.5625px 0 #009a00, inset 0 -1.5625px 0 #006700, inset 0 0 0 1.5625px #007100, inset 0 0 0 4.16667px green, inset 0 0 0 5px #001a00, inset 0 0 0 5.88235px black, inset 0 0 0 6.66667px rgba(26, 255, 26, 0.2), inset 0 0 0 9.09091px #007100, inset 0 20px 6.66667px #005700, inset 0 0 5px 8.33333px #003400, 0 2.5px 0 rgba(0, 0, 0, 0.3);
+    background-color: #007600; }
+    .arcade-buttons.green:active:after, .arcade-buttons.green.is-pushed:after {
+      bottom: 5.83333px;
+      border-width: 0; }

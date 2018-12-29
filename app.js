@@ -43,4 +43,9 @@ app.use('/video', (req, res) => {
   const videoFile = getLatestFileFromFolder(path.join(__dirname, 'public'), 'mp4');
   res.render('video', { videoSrc: `/${videoFile}` });
 });
+
+app.use('/graph-video', (req, res) => {
+  const videoFile = 'background/sample_wave.mp4';
+  res.render('video', { videoSrc: `/${videoFile}` });
+});
 app.listen(port, () => console.log(`app listening on port ${port}!`))

@@ -1,4 +1,5 @@
 .DS_Store
+/public/**.mp4
 /node_modules
 /videos
 /temp_clips/**.mp4
